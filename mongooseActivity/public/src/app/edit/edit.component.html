@@ -1,0 +1,44 @@
+<div class="container">
+  <a [routerLink]="['/home']"> Home </a>
+
+  <div id="errors">	
+    <h3> {{ response }} </h3>	
+  </div>
+  
+  <table>
+    <form (submit)="onEdit()">
+      <tr>
+          <td><label> Name: </label></td>
+          <td><input class="form-control" type="text" name="editReptile.name" [(ngModel)]="editReptile.name" /></td>
+      </tr>
+      <tr>
+          <td><label> Species: </label></td>
+          <td>
+            <select class='form-control' name="editReptile.species" [(ngModel)]="editReptile.species">
+              <option value="Crocodile">Crocodile</option>
+              <option value="Snake">Snake</option>
+              <option value="Alligator">Alligator</option>
+              <option value="Lizard">Lizard</option>
+              <option value="Turtle">Turtle</option>
+            </select>
+          </td>
+      </tr>
+      <tr>
+          <td><label> Personality: </label></td>
+          <td><select class='form-control' name="editReptile.personality" [(ngModel)]="editReptile.personality">
+              <option value="Aggressive">Aggressive</option>
+              <option value="Neutral">Neutral</option>
+              <option value="Relaxed">Relaxed</option>
+          </select></td>
+      </tr>
+      <tr>
+          <td><label> Age: </label></td>
+          <td><input class='form-control' type="number" name="editReptile.age" [(ngModel)]="editReptile.age"></td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-danger" (click)="deleteReptile(editReptile._id)"> Delete </button></td>
+        <td><input class="btn btn-primary" type="submit" value="Update" /></td>
+      </tr>
+    </form>
+  </table>
+</div>

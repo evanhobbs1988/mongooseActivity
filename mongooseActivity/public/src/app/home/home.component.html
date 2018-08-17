@@ -1,0 +1,19 @@
+<div class="container">
+  <br>
+  <h3>All Reptiles</h3>
+  <table class="table table-striped">
+    <thead> 
+      <th> Name </th>
+      <th> Actions </th>
+    </thead>
+    <tbody>  
+      <tr *ngFor="let i of reptiles">
+        <td> {{ i.name }}  </td>
+        <td> 
+          <button class="btn btn-secondary" [routerLink]="['/edit', i._id]"> Show </button>
+        </td>
+      </tr>
+    </tbody>
+  </table><br><br>
+  <a [routerLink]="['/new']"> Add A Reptile </a>
+</div>

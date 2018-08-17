@@ -1,0 +1,48 @@
+<div class="container">
+
+
+<button class="btn btn-link" [routerLink]="['/home']"> Home </button>
+
+<div id="errors">	
+	<h3> {{ response }} </h3>	
+</div>
+
+<h4> Add a new reptile: </h4>
+
+<table>
+  <form (submit)="onSubmit($event)">
+    <tr>
+        <td><label> Name: </label></td>
+        <td><input class="form-control" type="text" name="newReptile.name" [(ngModel)]="newReptile.name" /></td>
+    </tr>
+    <tr>
+        <td><label> Species: </label></td>
+        <td>
+          <select class='form-control' name="newReptile.species" [(ngModel)]="newReptile.species">
+            <option value="Crocodile">Crocodile</option>
+            <option value="Snake">Snake</option>
+            <option value="Alligator">Alligator</option>
+            <option value="Lizard">Lizard</option>
+            <option value="Turtle">Turtle</option>
+          </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label> Personality: </label></td>
+        <td><select class='form-control' name="newReptile.personality" [(ngModel)]="newReptile.personality">
+            <option value="Aggressive">Aggressive</option>
+            <option value="Neutral">Neutral</option>
+            <option value="Relaxed">Relaxed</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td><label> Age: </label></td>
+        <td><input class='form-control' type="number" name="newReptile.age" [(ngModel)]="newReptile.age"></td>
+    </tr>
+    <tr>
+      <td><button class="btn btn-danger" [routerLink]="['/home']"> Cancel </button></td>
+      <td><input class="btn btn-success" type="submit" name="onSubmitNew" value="Create" /></td>
+    </tr>
+  </form>
+</table>
+</div>
